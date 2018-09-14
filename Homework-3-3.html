@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 3</title>
+  </head>
+  <body>
+    <script>
+        'use strict'
+        var calc = [];
+while (true) {
+
+  var value = prompt("Введите число", 0);
+
+  if (value === null || value === "" || isNaN(value)) break;
+  calc.push(+value);
+}
+
+var sum = 0;
+for (var i = 0; i < calc.length; i++) {
+  sum += calc[i];
+}
+
+alert( sum );
+    </script>
+  </body>
+</html>
