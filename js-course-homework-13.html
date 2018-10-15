@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework№13 - Часы</title>
+</head>
+<body>
+<div style="position:absolute; height:200px; width:200px; background-color:#F7D358; border-radius: 50%"></div>
+<div ID="hour" style="position:absolute; height:25px; width:25px; left: 95px; top: 15px; background-color: mediumseagreen; border-radius: 50%">
+  <span>12</span>  </div>
+<div style="position:absolute; height:25px; width:25px; left: 135px; top: 30px; background-color: mediumseagreen; border-radius: 50%">
+    <span>1</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 165px; top: 55px; background-color: mediumseagreen; border-radius: 50%">
+    <span>2</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 175px; top: 100px; background-color: mediumseagreen; border-radius: 50%">
+    <span>3</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 165px; top: 140px; background-color: mediumseagreen; border-radius: 50%">
+    <span>4</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 135px; top: 165px; background-color: mediumseagreen; border-radius: 50%">
+    <span>5</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 95px; top: 175px; background-color: mediumseagreen; border-radius: 50%">
+    <span>6</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 55px; top: 165px; background-color: mediumseagreen; border-radius: 50%">
+    <span>7</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 30px; top: 140px; background-color: mediumseagreen; border-radius: 50%">
+    <span>8</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 20px; top: 100px; background-color: mediumseagreen; border-radius: 50%">
+    <span>9</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 25px; top: 60px; background-color: mediumseagreen; border-radius: 50%">
+    <span>10</span></div>
+<div style="position:absolute; height:25px; width:25px; left: 50px; top: 30px; background-color: mediumseagreen; border-radius: 50%">
+    <span>11</span></div>
+<div class="hand second-hand" style="position:absolute; height:90px; width:2px; left: 105px; top: 105px; background-color: black; border-radius: 20%;
+transform-origin: 100%; transform: rotate(90deg); transition: all 0.05s; transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1)">
+</div>
+<div class="hand mins-hand" style="position:absolute; height:65px; width:4px; left: 105px; top: 105px; background-color: black; border-radius: 20%;
+transform-origin: 100%; transform: rotate(90deg); transition: all 0.05s; transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1)">
+</div>
+<div class="hand hour-hand" style="position:absolute; height:50px; width:8px; left: 105px; top: 105px; background-color: black; border-radius: 10%;
+     transform-origin: 100%; transform: rotate(90deg); transition: all 0.05s; transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1)">
+</div>
+<div style="position:absolute; height:25px; width:70px; left: 80px; top: 70px; background-color: #F7D358">
+    <span id="TTT">16:33:21</span></div>
+<script>
+     'use strict'
+    setInterval(UpdateTime, 1000);
+
+    function UpdateTime() {
+        var CurrTime = new Date();
+        var CurrTimeStr = FormatDateTime(CurrTime);
+        document.getElementById('TTT').innerHTML = CurrTimeStr;
+    }
+
+    function FormatDateTime(DT) {
+        var Hours = DT.getHours();
+        var Minutes = DT.getMinutes();
+        var Seconds = DT.getSeconds();
+        return  Str0L(Hours, 2) + ':' + Str0L(Minutes, 2) + ':' + Str0L(Seconds, 2);
+    }
+
+    function Str0L(Val, Len) {
+        var StrVal = Val.toString();
+        while (StrVal.length < Len)
+            StrVal = '0' + StrVal;
+        return StrVal;
+    }
+
+
+     const secondHand = document.querySelector('.second-hand');
+     const minsHand = document.querySelector('.mins-hand');
+     const hourHand = document.querySelector('.hour-hand');
+
+     function Setdate() {
+         const now = new Date();
+
+         const seconds = now.GetSeconds();
+         const secondsDegrees = ((seconds/60)*360) + 90;
+         secondHand.style.transform = 'rotate(${secondsDegrees}deg)';
+
+         const mins = now.GetMinutes();
+         const minsDegrees = ((mins/60)*360) + 90;
+         minsHand.style.transform = 'rotate(${minsDegrees}deg)';
+
+         const hours = now.GetMinutes();
+         const hoursDegrees = ((mins/12)*360) + 90;
+         hoursHand.style.transform = 'rotate(${hoursDegrees}deg)';
+
+     }
+
+     SetInterval(Setdate, 1000);
+
+
+
+</script>
+</body>
+</html>
