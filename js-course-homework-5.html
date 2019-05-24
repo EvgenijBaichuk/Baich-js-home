@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Money calculators</title>
+  </head>
+  <body>
+    <script>
+    var Johnbills = [124, 48, 268, 180, 42];
+    var percent;
+    if (Johnbills[i] > 200) {
+      percent = 0.1;
+    } else if (Johnbills [i] < 50) {
+      percent = 0.15;
+    } else {
+      percent = 0.2;
+    };
+    var tips = [];
+    for (var i = 0; i <= Johnbills.length; i++) {
+    tips [i] = Johnbills[i] * percent;
+     };
+     tips.push(tips[i]);
+    var totalAmount[];
+    for (var i = 0; i <= Johnbills.length; i++) {
+    totalAmount[i] = tips[i] + Johnbills[i];
+  };
+  tips.push(totalAmount[i]);
+    console.log(tips);
+    var JohnTotal = 0;
+    for (var i in tips ) {
+      total += tips[i];
+    }
+    var JohnAverageTip = JohnTotal/i;
+
+  var Markbills = [77, 375, 110, 45];
+  var percent;
+  if (Markbills[i] > 300) {
+    percent = 0.25;
+  } else if (Markbills [i] < 100) {
+    percent = 0.2;
+  } else {
+    percent = 0.10;
+  };
+  var Marktips = [];
+  for (var i = 0; i <= Markbills.length; i++) {
+  Marktips [i] = Markbills[i] * percent;
+   };
+   tips.push(Marktips[i]);
+  var totalAmount[];
+  for (var i = 0; i <= Markbills.length; i++) {
+  MarktotalAmount[i] = Marktips[i] + Markbills[i];
+};
+tips.push(MarktotalAmount[i]);
+console.log(Marktips);
+var MarkTotal = 0;
+for (var i in Marktips ) {
+  total += Marktips[i];
+}
+var MarkAverageTip = MarkTotal/i;
+
+if (JohnAverageTip > MarkAverageTip) {
+  console.log('Johns family pays more tips in average');
+} else if (JohnAverageTip < MarkAverageTip) {
+  console.log('Marks family pays more tips in average');
+} else {
+  console.log('The average tip is the same for both families');
+}
+    </script>
+  </body>
+</html>
