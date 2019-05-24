@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <meta charset="utf-8">
+  <title>Task 7-1
+  </title>
+  <head>
+  </head>
+    <body>
+    <script>
+    const sum = (a) => {
+      let concat = a;
+      const func = (b) => {
+        if (b) {
+          concat += b;
+          return func;
+        } else {
+          return concat;
+        }
+      };
+      return func;
+    };
+    sum(2)(3);
+    </script>
+    </body>
+</html>
